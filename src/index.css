@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "noyhgeometric-bold";
+  src: url("../src/fonts/Noyh-Geometric/noyhgeometric-bold.otf")
+    format("opentype");
+}
+
+.font-noyhgeometric-bold {
+  @apply font-noyhgeometricBold; /* text-[#d8dbe9] */
+}
+
+@font-face {
+  font-family: "noyhgeometric-regular";
+  src: url("../src/fonts/Noyh-Geometric/noyhgeometric-regular.otf")
+    format("opentype");
+}
+
+.font-noyhgeometric-regular {
+  @apply font-noyhgeometricRegular;
+}
+
+@font-face {
+    font-family: "Brandon_Grotesque_regular";
+    src: url("../src/fonts/Brandon-Grotesque/Brandon_Grotesque_regular.otf");
+}
+
+.font-brandonGrotesque-regular {
+    @apply font-brandonGrotesqueRegular;
+}
+
+@font-face {
+    font-family: "Brandon_Grotesque_medium";
+    src: url("../src/fonts/Brandon-Grotesque/Brandon_Grotesque_medium.otf");
+}
+
+.font-brandonGrotesque-medium {
+    @apply font-brandonGrotesqueMedium;
+}
+
+@font-face {
+  font-family: "Brandon_Grotesque_bold";
+  src: url("../src/fonts/Brandon-Grotesque/Brandon_Grotesque_bold.otf");
+}
+
+.font-brandonGrotesque-bold {
+  @apply font-brandonGrotesqueBold;
+}
+
+@font-face {
+  font-family: "Brandon_Grotesque_black";
+  src: url("../src/fonts/Brandon-Grotesque/Brandon_Grotesque_black.otf");
+}
+
+.font-brandonGrotesque-black {
+  @apply font-brandonGrotesqueBlack;
+}
+
+@font-face {
+  font-family: "JosefinSans-Bold";
+  src: url("../src/fonts/Josefin_Sans/static/JosefinSans-Bold.ttf");
+}
+
+.font-josefinSans-bold {
+  @apply font-josefinSansBold;
+}
