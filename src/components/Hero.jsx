@@ -31,8 +31,8 @@ const Hero = () => {
 
   return (
     <section className="bg-[#0b1623] mb-4">
-      <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <div className="text-center">
+      <div className="flex flex-col items-center px-4 py-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="text-center" loading="lazy">
           <h1 className="text-5xl font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl font-noyhgeometric-bold">
             Unlock Your Future
           </h1>
@@ -45,9 +45,9 @@ const Hero = () => {
         <div className="bg-[#0b1623]">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 max-sm:grid-cols-2">
             {details.map((detail, index) => (
-              <div key={index} className="flex justify-center items-center">
+              <div key={index} className="flex items-center justify-center">
                 <button className="flex items-center justify-center gap-1">
-                  <div className="w-9 h-9 rounded-full flex justify-center items-center">
+                  <div className="flex items-center justify-center rounded-full w-9 h-9">
                     {detail.icon}
                   </div>
                   <h1 className="text-white font-brandonGrotesqueRegular text-[20px] py-5 px-5 max-sm:p-2">
@@ -57,7 +57,7 @@ const Hero = () => {
                 </button>
               </div>
             ))}
-            <div className="flex flex-col justify-center items-center gap-1">
+            <div className="flex flex-col items-center justify-center gap-1">
               <div className="flex items-center justify-center gap-2">
                 <h1
                   className="text-white 
@@ -66,7 +66,7 @@ const Hero = () => {
                   Salary range
                 </h1>
                 <div className="text-white font-brandonGrotesqueMedium text-[16px] py-5 pl-5 max-sm:py-2">
-                  ${sliderValue[0]} - ${sliderValue[1]}
+                ₹{sliderValue[0]} - ₹{sliderValue[1]}
                 </div>
               </div>
               <RangeSlider

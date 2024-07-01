@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @font-face {
   font-family: "noyhgeometric-bold";
   src: url("../src/fonts/Noyh-Geometric/noyhgeometric-bold.otf")
