@@ -1,5 +1,13 @@
+import Hero from "../components/Hero";
+import JobListings from "../components/JobListings";
+
 const JobsPage = () => {
-  return <div>JobsPage</div>;
+  return (
+    <section>
+      <Hero />
+      <JobListings isHome={false} />
+    </section>
+  );
 };
 
 export default JobsPage;

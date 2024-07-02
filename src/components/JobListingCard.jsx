@@ -23,9 +23,9 @@ const JobListingCard = ({ job, index }) => {
   );
 
   const handleBookmarkClick = (index) => {
-    const newBookmarkStatus = [...bookmarkStatus]; // Create a copy of bookmark status array
-    newBookmarkStatus[index] = !newBookmarkStatus[index]; // Toggle bookmark status for the clicked job listing
-    setBookmarkStatus(newBookmarkStatus); // Update the bookmark status state
+    const newBookmarkStatus = [...bookmarkStatus];
+    newBookmarkStatus[index] = !newBookmarkStatus[index];
+    setBookmarkStatus(newBookmarkStatus);
   };
   return (
     <div
@@ -48,7 +48,7 @@ const JobListingCard = ({ job, index }) => {
             </div>
             <button
               className="p-2 bg-white rounded-full"
-              onClick={() => handleBookmarkClick(index)} // Pass index to identify the specific job listing
+              onClick={() => handleBookmarkClick(index)}
             >
               <BookmarkIcon
                 className={`h-5 w-5 text-black ${
