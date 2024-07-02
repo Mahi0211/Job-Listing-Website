@@ -17,7 +17,7 @@ const FilterCard = () => {
   ];
 
   return (
-    <div className="flex flex-col w-[25%] border-r-2 border-[#d8dbe9] max-lg:hidden">
+    <div className="flex flex-col w-[20%] border-r-2 border-[#d8dbe9] max-lg:hidden">
       <div className="p-5">
         <div className="flex items-center justify-between mb-5">
           <h1 className="text-2xl font-brandonGrotesqueBold">Filters</h1>
