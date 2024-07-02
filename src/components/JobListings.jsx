@@ -17,31 +17,29 @@ const JobListings = ({ isHome = false }) => {
         const data = await res.json();
         setJobs(data);
       } catch (error) {
-        console.log("Error fetchin data", error);
+        console.log("Error fetching data", error);
       } finally {
         setLoading(false);
       }
     };
     fetchJobs();
-  }, []);
+  }, [isHome]);
 
   return (
     <section className="px-4 py-10">
-      <div className="flex gap-10">
+      <div className="flex flex-col lg:flex-row gap-10">
         <FilterCard />
-        <div className="m-auto container-xl lg:container">
-          <h2 className="mb-6 text-5xl font-bold text-black font-brandonGrotesqueBold">
+        <div className="m-auto w-full lg:w-3/4">
+          <h2 className="mb-6 text-3xl lg:text-5xl font-bold text-black font-brandonGrotesqueBold">
             {isHome ? "Recent jobs" : "Browse jobs"}
           </h2>
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
             {loading ? (
               <Loading loading={loading} />
             ) : (
-              <>
-                {jobs.map((job, index) => (
-                  <JobListingCard key={job.id} job={job} index={index} />
-                ))}
-              </>
+              jobs.map((job, index) => (
+                <JobListingCard key={job.id} job={job} index={index} />
+              ))
             )}
           </div>
         </div>

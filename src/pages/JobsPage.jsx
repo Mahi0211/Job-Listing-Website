@@ -5,7 +5,7 @@ const JobsPage = () => {
   return (
     <section>
       <Hero />
-      <JobListings isHome={false} />
+      <JobListings />
     </section>
   );
 };
