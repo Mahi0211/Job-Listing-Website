@@ -10,7 +10,7 @@ const NotFoundPage = () => {
         style={{ backgroundImage: `url(${textureImg})` }}
       ></div>
       <div>
-        <h1 className="md:text-[360px] text-[300px] max-sm:text-[200px] max-md:mb-6 max-sm:mt-12 font-brandonGrotesqueBlack text-[#EEEDEB] leading-none">
+        <h1 className="md:text-[360px] text-[300px] max-sm:text-[200px] max-md:mb-6 font-brandonGrotesqueBlack text-[#EEEDEB] leading-none">
           404
         </h1>
       </div>
