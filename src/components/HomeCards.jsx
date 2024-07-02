@@ -26,7 +26,7 @@ const HomeCards = () => {
               your career journey
             </p>
           </Card>
-          <Card bg="bg-[#C4DFDF]">
+          <Card bg="bg-[#bbdefb]">
             <div className="inline-block px-3 py-1 mb-4 bg-white rounded-full drop-shadow-md font-brandonGrotesqueBold">
               Add
             </div>
