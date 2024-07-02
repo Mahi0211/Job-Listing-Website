@@ -6,22 +6,24 @@ const NotFoundPage = () => {
   return (
     <section className="relative text-center flex flex-col justify-between items-center flex-grow bg-[#0B1623]">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-multiply opacity-50"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-multiply opacity-[35%]"
         style={{ backgroundImage: `url(${textureImg})` }}
       ></div>
-      <div className="relative">
-        <h1 className="text-[360px] font-brandonGrotesqueBlack text-[#EEEDEB] leading-none">
+      <div>
+        <h1 className="md:text-[360px] text-[300px] max-sm:text-[200px] max-md:mb-6 max-sm:mt-12 font-brandonGrotesqueBlack text-[#EEEDEB] leading-none">
           404
         </h1>
-        <p className="text-[24px] leading-none mb-3 font-brandonGrotesqueMedium text-[#EEEDEB]">
+      </div>
+      <div className="relative">
+        <p className="text-[24px] leading-none mb-3 font-brandonGrotesqueMedium text-[#EEEDEB] max-sm:text-[20px]">
           Page not found
         </p>
-        <p className="mb-8 text-[16px] leading-none font-brandonGrotesqueMedium text-[#DDDDDD]">
+        <p className="mb-8 text-[16px] leading-none font-brandonGrotesqueMedium text-[#DDDDDD] max-sm:text-[14px]">
           Woops.. Sorry, we are not able to find what you were looking for
         </p>
         <Link
           to="/"
-          className="text-[#EEEDEB] hover:bg-[#293346] px-3 py-2 font-brandonGrotesqueMedium border border-[#EEEDEB] text-[14px]"
+          className="text-[#EEEDEB] hover:bg-[#293346] px-3 py-2 font-brandonGrotesqueMedium border border-[#EEEDEB] text-[14px] max-sm:text-[12px]"
         >
           HOME PAGE
         </Link>
