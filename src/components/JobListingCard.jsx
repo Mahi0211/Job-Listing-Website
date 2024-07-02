@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BookmarkIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import jobs from "../jobs.json";
+import { Link } from "react-router-dom";
 
 const tagColorsMap = {
   "Developer Junior": "bg-blue-50",
@@ -14,8 +15,8 @@ const tagColorsMap = {
 const JobListingCard = ({ job, index }) => {
   const colorClass =
     job.tag && tagColorsMap[job.tag] ? tagColorsMap[job.tag] : "bg-slate-200";
-  console.log("job.tag:", job.tag);
-  console.log("color:", colorClass);
+  // console.log("job.tag:", job.tag);
+  // console.log("color:", colorClass);
   // Initialize bookmark states for each job listing
   const [bookmarkStatus, setBookmarkStatus] = useState(() =>
     Array(jobs.length).fill(false)
@@ -92,12 +93,12 @@ const JobListingCard = ({ job, index }) => {
               {job.location}
             </div>
           </div>
-          <a
-            href={`/job/${job.id}`}
+          <Link
+            to={`/job/${job.id}`}
             className="bg-[#0B1623] text-white py-1 px-3 rounded-2xl font-brandonGrotesqueBold"
           >
             Details
-          </a>
+          </Link>
         </div>
       </div>
     </div>

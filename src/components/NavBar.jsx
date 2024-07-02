@@ -1,12 +1,19 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const navigation = [
-  { name: "Find job", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Find job", href: "/jobs" },
+  { name: "Team", href: "#" },
+  { name: "Projects", href: "#" },
+  { name: "Calendar", href: "#" },
+];
+const menuItem = [
+  { name: "Your Profile", href: "#" },
+  { name: "Settings", href: "#" },
+  { name: "Sign out", href: "#" },
 ];
 
 function classNames(...classes) {
@@ -14,6 +21,13 @@ function classNames(...classes) {
 }
 
 const NavBar = () => {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("/jobs");
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
+
   return (
     <Disclosure
       as="nav"
@@ -37,31 +51,34 @@ const NavBar = () => {
               </div>
               <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
                 <div className="flex items-center flex-shrink-0">
-                  <a href="/">
+                  <Link to="/">
                     <img
                       className="w-auto h-8"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                       alt="Your Company"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-12 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-[#293346] text-white"
-                            : "text-gray-300 hover:bg-[#3e4755] hover:text-white",
-                          "rounded-md px-3 py-2 text-[18px] leading-[1.75rem] font-medium font-brandonGrotesque-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                    {navigation.map((item) => {
+                      const isActive = activeLink === item.href;
+                      return (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={classNames(
+                            isActive
+                              ? "bg-[#293346] text-white"
+                              : "text-gray-300 hover:bg-[#3e4755] hover:text-white",
+                            "rounded-md px-3 py-2 text-[18px] leading-[1.75rem] font-medium font-brandonGrotesque-medium"
+                          )}
+                          aria-current={isActive ? "page" : undefined}
+                        >
+                          {item.name}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -98,45 +115,21 @@ const NavBar = () => {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-lg text-gray-700 font-brandonGrotesqueMedium"
-                            )}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-lg text-gray-700 font-brandonGrotesqueMedium"
-                            )}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-lg text-gray-700 font-brandonGrotesqueMedium"
-                            )}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
+                      {menuItem.map((item) => (
+                        <Menu.Item key={item.name}>
+                          {({ active }) => (
+                            <Link
+                              to={item.href}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-lg text-gray-700 font-brandonGrotesqueMedium"
+                              )}
+                            >
+                              {item.name}
+                            </Link>
+                          )}
+                        </Menu.Item>
+                      ))}
                     </Menu.Items>
                   </Transition>
                 </Menu>

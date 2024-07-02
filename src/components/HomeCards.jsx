@@ -1,5 +1,6 @@
 import ArrowUpRightIcon from "@heroicons/react/20/solid/ArrowUpRightIcon";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 const HomeCards = () => {
   return (
@@ -14,11 +15,11 @@ const HomeCards = () => {
               <h2 className="text-4xl font-noyhgeometricBold max-lg:text-3xl">
                 For Candidates
               </h2>
-              <a href="#">
+              <Link to="#">
                 <div className="w-12 h-12 flex justify-center items-center rounded-full bg-[#0B1623] max-lg:w-10 max-lg:h-10">
                   <ArrowUpRightIcon className="w-6 h-6 fill-white max-lg:w-5 max-lg:h-5" />
                 </div>
-              </a>
+              </Link>
             </div>
             <p className="mt-2 mb-4 font-brandonGrotesqueBold text-lg text-[#3e4755] max-lg:text-base">
               Explore a diverse range of job listings and take the next step in
@@ -33,11 +34,11 @@ const HomeCards = () => {
               <h2 className="text-4xl font-noyhgeometricBold max-lg:text-3xl">
                 For Employers
               </h2>
-              <a href="#">
+              <Link to="#">
                 <div className="w-12 h-12 flex justify-center items-center rounded-full border-[1.7px] border-black max-lg:w-10 max-lg:h-10">
                   <ArrowUpRightIcon className="w-6 h-6 fill-[#0B1623] max-lg:w-5 max-lg:h-5" />
                 </div>
-              </a>
+              </Link>
             </div>
             <p className="mt-2 mb-4 font-brandonGrotesqueBold text-lg text-[#3e4755] max-lg:text-base">
               Streamline your recruitment process and find the perfect
