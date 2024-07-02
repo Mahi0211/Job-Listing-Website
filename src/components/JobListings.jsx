@@ -37,9 +37,11 @@ const JobListings = ({ isHome = false }) => {
             {loading ? (
               <Loading loading={loading} />
             ) : (
-              jobs.map((job, index) => (
-                <JobListingCard key={job.id} job={job} index={index} />
-              ))
+              <>
+                {jobs.map((job, index) => (
+                  <JobListingCard key={job.id} job={job} index={index} />
+                ))}
+              </>
             )}
           </div>
         </div>
