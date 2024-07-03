@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import FilterCard from "./FilterCard";
 import JobListingCard from "./JobListingCard";
-import Loading from "../components/Loading";
+// import Loading from "../components/Loading";
 
 const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -16,9 +16,10 @@ const JobListings = ({ isHome = false }) => {
         setJobs(data);
       } catch (error) {
         console.log("Error fetching data", error);
-      } finally {
-        setLoading(false);
       }
+      // finally {
+      //   setLoading(false);
+      // }
     };
     fetchJobs();
   }, [isHome]);
@@ -32,15 +33,15 @@ const JobListings = ({ isHome = false }) => {
             {isHome ? "Recent jobs" : "Browse jobs"}
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-            {loading ? (
+            {/* {loading ? (
               <Loading loading={loading} />
             ) : (
-              <>
-                {jobs.map((job, index) => (
-                  <JobListingCard key={job.id} job={job} index={index} />
-                ))}
-              </>
-            )}
+              <> */}
+            {jobs.map((job, index) => (
+              <JobListingCard key={job.id} job={job} index={index} />
+            ))}
+            {/* </>
+            )} */}
           </div>
         </div>
       </div>

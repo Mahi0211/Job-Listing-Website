@@ -94,7 +94,7 @@ const JobListingCard = ({ job, index }) => {
             </div>
           </div>
           <Link
-            to={`/job/${job.id}`}
+            to={`/jobs/${job.id}`}
             className="bg-[#0B1623] text-white py-1 px-3 rounded-2xl font-brandonGrotesqueBold"
           >
             Details
