@@ -9,13 +9,17 @@ const JobListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
+      const baseUrl = import.meta.env.VITE_API_BASE_URL;
+      const apiUrl = isHome ? `${baseUrl}/jobs?_limit=3` : `${baseUrl}/jobs`;
       try {
         const res = await fetch(apiUrl);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
         const data = await res.json();
         setJobs(data);
       } catch (error) {
-        console.log("Error fetching data", error);
+        console.error("Error fetching data", error);
       } finally {
         setLoading(false);
       }

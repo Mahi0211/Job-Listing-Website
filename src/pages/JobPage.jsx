@@ -4,25 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 // import Loading from "../components/Loading";
 
 const JobPage = () => {
-  //   const { id } = useParams();
   const job = useLoaderData();
-  //   const [job, setJob] = useState(null);
-  //   const [loading, setLoading] = useState(true);
-
-  //   useEffect(() => {
-  //     const fetchJob = async () => {
-  //       try {
-  //         const res = await fetch(`/api/jobs/${id}`);
-  //         const data = await res.json();
-  //         setJob(data);
-  //       } catch (error) {
-  //         console.log("Error fetching data", error);
-  //       } finally {
-  //         setLoading(false);
-  //       }
-  //     };
-  //     fetchJob();
-  //   }, [id]);
 
   return (
     <>
@@ -87,20 +69,30 @@ const JobPage = () => {
             {/* <!-- Sidebar --> */}
             <aside>
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-3xl mb-6 font-josefinSansBold text-[#0B1623]">{job.company.name}</h2>
-                <h3 className="text-xl mb-4 font-brandonGrotesqueBold">Company Info</h3>
+                <h2 className="text-3xl mb-6 font-josefinSansBold text-[#0B1623]">
+                  {job.company.name}
+                </h2>
+                <h3 className="text-xl mb-4 font-brandonGrotesqueBold">
+                  Company Info
+                </h3>
 
-                <p className="my-2 font-brandonGrotesqueMedium text-[18px] max-sm:text-[16px]">{job.company.description}</p>
+                <p className="my-2 font-brandonGrotesqueMedium text-[18px] max-sm:text-[16px]">
+                  {job.company.description}
+                </p>
 
                 <hr className="my-4" />
 
-                <h3 className="text-xl font-brandonGrotesqueMedium">Contact Email:</h3>
+                <h3 className="text-xl font-brandonGrotesqueMedium">
+                  Contact Email:
+                </h3>
 
                 <p className="my-2 bg-indigo-100 p-2 font-brandonGrotesqueBold text-[18px] max-sm:text-[16px] text-[#0B1623]">
                   {job.company.contactEmail}
                 </p>
 
-                <h3 className="text-xl font-brandonGrotesqueMedium">Contact Phone:</h3>
+                <h3 className="text-xl font-brandonGrotesqueMedium">
+                  Contact Phone:
+                </h3>
 
                 <p className="my-2 bg-indigo-100 p-2 font-brandonGrotesqueBold text-[18px] max-sm:text-[16px] text-[#0B1623]">
                   {job.company.contactPhone}
@@ -109,7 +101,9 @@ const JobPage = () => {
 
               {/* <!-- Manage --> */}
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                <h3 className="text-xl mb-6 font-brandonGrotesqueBold">Manage Job</h3>
+                <h3 className="text-xl mb-6 font-brandonGrotesqueBold">
+                  Manage Job
+                </h3>
                 <Link
                   to="/add-job.html"
                   className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-brandonGrotesqueBold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
