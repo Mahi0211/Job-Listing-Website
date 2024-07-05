@@ -15,7 +15,7 @@ const HomeCards = () => {
               <h2 className="text-4xl font-noyhgeometricBold max-lg:text-3xl">
                 For Candidates
               </h2>
-              <Link to="#">
+              <Link to="/jobs">
                 <div className="w-12 h-12 flex justify-center items-center rounded-full bg-[#0B1623] max-lg:w-10 max-lg:h-10">
                   <ArrowUpRightIcon className="w-6 h-6 fill-white max-lg:w-5 max-lg:h-5" />
                 </div>
@@ -34,7 +34,7 @@ const HomeCards = () => {
               <h2 className="text-4xl font-noyhgeometricBold max-lg:text-3xl">
                 For Employers
               </h2>
-              <Link to="#">
+              <Link to="/add-job">
                 <div className="w-12 h-12 flex justify-center items-center rounded-full border-[1.7px] border-black max-lg:w-10 max-lg:h-10">
                   <ArrowUpRightIcon className="w-6 h-6 fill-[#0B1623] max-lg:w-5 max-lg:h-5" />
                 </div>

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 // import { FaExclamationTriangle } from 'react-icons/fa';
-import { suiteImg, textureImg } from "../assets/icons";
+import { suiteImg, textureImgMin } from "../assets/icons";
 
 const NotFoundPage = () => {
   return (
     <section className="relative text-center flex flex-col justify-between items-center flex-grow bg-[#0B1623]">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-multiply opacity-[35%]"
-        style={{ backgroundImage: `url(${textureImg})` }}
+        style={{ backgroundImage: `url(${textureImgMin})` }}
       ></div>
       <div>
         <h1 className="md:text-[360px] text-[300px] max-sm:text-[180px] max-md:mb-6 font-brandonGrotesqueBlack text-[#EEEDEB] leading-none">
