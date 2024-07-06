@@ -7,10 +7,8 @@ import { Link } from "react-router-dom";
 const tagColorsMap = {
   "Developer Junior": "bg-blue-50",
   "Developer Senior": "bg-blue-100",
-  "UI/UX Designer Junior": "bg-green-50",
-  "UI/UX Designer Senior": "bg-green-100",
-  "Graphic Designer Junior": "bg-purple-50",
-  "Graphic Designer Senior": "bg-pink-100",
+  "Designer Junior": "bg-green-50",
+  "Designer Senior": "bg-green-100",
 };
 const JobListingCard = ({ job, index }) => {
   const colorClass =
@@ -36,12 +34,12 @@ const JobListingCard = ({ job, index }) => {
         <div
           className={`${colorClass} h-72 rounded-lg flex flex-col justify-between p-4`}
         >
-          {console.log(
+          {/* {console.log(
             "Class name:",
             `${
               colorClass ? `bg-[${colorClass}]` : "bg-slate-400"
             } h-72 rounded-lg flex flex-col justify-between p-4`
-          )}
+          )} */}
           <div className="flex justify-between">
             <div className="inline-block p-2 text-sm bg-white rounded-full shadow font-brandonGrotesqueBold">
               {job.date}

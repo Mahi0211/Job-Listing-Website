@@ -1,27 +1,33 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-const AddJobPage = ({ addJobSubmit }) => {
-  const [title, setTitle] = useState("");
-  const [type, setType] = useState("Full-Time");
-  const [etype, setEtype] = useState("Full-Day");
-  const [location, setLocation] = useState("");
-  const [description, setDescription] = useState("");
-  const [skill, setSkill] = useState("");
-  const [tags, setTags] = useState([]);
-  const [minSalary, setMinSalary] = useState("");
-  const [maxSalary, setMaxSalary] = useState("");
-  const [customMinSalary, setCustomMinSalary] = useState("");
-  const [customMaxSalary, setCustomMaxSalary] = useState("");
-  const [salary, setSalary] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [companyDescription, setCompanyDescription] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-  const [date, setDate] = useState(null);
+const EditJobPage = ({ updateJobSubmit }) => {
+  const { id } = useParams();
+  const job = useLoaderData();
+  const [title, setTitle] = useState(job.title);
+  const [type, setType] = useState(job.type);
+  const [etype, setEtype] = useState(job.etype);
+  const [location, setLocation] = useState(job.location);
+  const [description, setDescription] = useState(job.description);
+  const [skill, setSkill] = useState(job.skill);
+  const [tags, setTags] = useState(job.tags || []);
+  const [minSalary, setMinSalary] = useState(job.minSalary);
+  const [maxSalary, setMaxSalary] = useState(job.maxSalary);
+  const [customMinSalary, setCustomMinSalary] = useState(job.customMinSalary);
+  const [customMaxSalary, setCustomMaxSalary] = useState(job.customMaxSalary);
+  const [salary, setSalary] = useState(job.salary);
+  const [companyName, setCompanyName] = useState(job.company.name);
+  const [companyDescription, setCompanyDescription] = useState(
+    job.company.description
+  );
+  const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
+  const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
+  const [date, setDate] = useState(job.date);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSkillKeyDown = (e) => {
     if (e.key === "Enter" && skill) {
@@ -34,8 +40,6 @@ const AddJobPage = ({ addJobSubmit }) => {
   const removeSkill = (indexToRemove) => {
     setTags(tags.filter((_, index) => index !== indexToRemove));
   };
-
-  const navigate = useNavigate();
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -51,7 +55,8 @@ const AddJobPage = ({ addJobSubmit }) => {
 
     // console.log(formattedDate);
 
-    const newJob = {
+    const updateJob = {
+      id,
       title,
       type,
       etype,
@@ -69,11 +74,11 @@ const AddJobPage = ({ addJobSubmit }) => {
     };
     // console.log(newJob);
     console.log(date);
-    addJobSubmit(newJob);
+    updateJobSubmit(updateJob);
 
-    toast.success("Job Added Successfully");
+    toast.success("Job Updated Successfully");
 
-    return navigate("/jobs");
+    return navigate(`/jobs/${id}`);
   };
 
   useEffect(() => {
@@ -93,7 +98,7 @@ const AddJobPage = ({ addJobSubmit }) => {
         setError("");
       }
     }
-  }, [minSalary, maxSalary, customMinSalary, customMaxSalary]);
+  }, [minSalary, maxSalary, customMinSalary, customMaxSalary, job.salary]);
 
   const handleMinSalaryChange = (e) => {
     const value = e.target.value;
@@ -125,7 +130,7 @@ const AddJobPage = ({ addJobSubmit }) => {
         <div className="px-6 py-8 m-4 mb-4 bg-white border rounded-md shadow-md md:m-0">
           <form onSubmit={submitForm}>
             <h2 className="mb-6 text-3xl max-sm:text-2xl text-center font-josefinSansBold">
-              Add Job
+              Update Job
             </h2>
 
             <div className="mb-4">
@@ -255,7 +260,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                       id="minSalary"
                       name="minSalary"
                       className="w-full px-3 py-2 mr-2 text-lg max-sm:text-base border rounded font-brandonGrotesqueMedium"
-                      required
+                      //   required
                       value={minSalary}
                       onChange={handleMinSalaryChange}
                     >
@@ -295,7 +300,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                       id="maxSalary"
                       name="maxSalary"
                       className="w-full px-3 py-2 mr-2 text-lg max-sm:text-base border rounded font-brandonGrotesqueMedium"
-                      required
+                      //   required
                       value={maxSalary}
                       onChange={handleMaxSalaryChange}
                     >
@@ -337,7 +342,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                 >
                   Selected Salary Range:
                 </label>
-                <p className="text-lg max-sm:text-base">{salary}</p>
+                <p className="text-lg max-sm:text-base">{job.salary}</p>
               </div>
             </div>
 
@@ -438,7 +443,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                 className="w-full mt-2 px-4 py-2 text-xl max-sm:text-lg text-white bg-indigo-500 rounded-full hover:bg-indigo-600 font-brandonGrotesqueBold focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Add Job
+                Update Job
               </button>
             </div>
           </form>
@@ -448,4 +453,4 @@ const AddJobPage = ({ addJobSubmit }) => {
   );
 };
 
-export default AddJobPage;
+export default EditJobPage;

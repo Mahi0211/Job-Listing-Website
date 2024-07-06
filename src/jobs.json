@@ -37,8 +37,14 @@
         "contactPhone": "+91 98765 43210"
       },
       "date": "20 Apr, 2024",
-      "tags": ["Full time", "Distant", "UI/UX", "Figma", "Senior level"],
-      "tag": "UI/UX Designer Senior"
+      "tags": [
+        "Full time",
+        "Distant",
+        "UI/UX",
+        "Figma",
+        "Senior level"
+      ],
+      "tag": "Designer Senior"
     },
     {
       "id": "2",
@@ -78,7 +84,12 @@
         "contactPhone": "+91 90876 54321"
       },
       "date": "20 Apr, 2024",
-      "tags": ["Full time", "Distant", "React", "Senior level"],
+      "tags": [
+        "Full time",
+        "Distant",
+        "React",
+        "Senior level"
+      ],
       "tag": "Developer Senior"
     },
     {
@@ -95,7 +106,13 @@
         "contactPhone": "+91 96785 23145"
       },
       "date": "20 Apr, 2024",
-      "tags": ["Part time", "Full day", "React", "Shift work", "Junior level"],
+      "tags": [
+        "Part time",
+        "Full day",
+        "React",
+        "Shift work",
+        "Junior level"
+      ],
       "tag": "Developer Junior"
     },
     {
@@ -112,7 +129,12 @@
         "contactPhone": "+91 93456 78901"
       },
       "date": "20 Apr, 2024",
-      "tags": ["Full time", "Shift work", "React", "Senior level"],
+      "tags": [
+        "Full time",
+        "Shift work",
+        "React",
+        "Senior level"
+      ],
       "tag": "Developer Senior"
     },
     {
@@ -129,7 +151,13 @@
         "contactPhone": "+91 94567 89012"
       },
       "date": "20 Apr, 2024",
-      "tags": ["Full time", "Distant", "UI/UX", "Senior level", "React Native"],
+      "tags": [
+        "Full time",
+        "Distant",
+        "UI/UX",
+        "Senior level",
+        "React Native"
+      ],
       "tag": "Developer Senior"
     },
     {
@@ -155,7 +183,7 @@
         "Sketch",
         "Junior level"
       ],
-      "tag": "UI/UX Designer Junior"
+      "tag": "Designer Junior"
     },
     {
       "id": "9",
@@ -204,7 +232,30 @@
         "Photoshop",
         "Junior level"
       ],
-      "tag": "Graphic Designer Junior"
+      "tag": "Designer Junior"
+    },
+    {
+      "id": "ff77",
+      "title": "Angular developer",
+      "type": "Full-Time",
+      "etype": "Full-Day",
+      "location": "Guindy, Chennai",
+      "description": "We are seeking a talented Angular Developer to contribute to our web development projects. The ideal candidate will have a strong background in front-end development and a deep understanding of Angular framework. You will work closely with cross-functional teams to design, develop, and maintain efficient and scalable web applications.",
+      "tags": [
+        "JavaScript",
+        "Angular",
+        "Rest API",
+        "HTML",
+        "CSS"
+      ],
+      "salary": "₹50k - ₹60k",
+      "date": "07 Jul, 2024",
+      "company": {
+        "name": "Ak Infopak",
+        "description": "Ak Infopak is a forward-thinking technology company dedicated to delivering innovative solutions to our clients. We specialize in developing state-of-the-art web applications and are looking for a skilled Angular Developer to join our dynamic team.",
+        "contactEmail": "akinfopak@gmail.com",
+        "contactPhone": "9685741320"
+      }
     }
   ]
 }
