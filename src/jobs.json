@@ -4,16 +4,8 @@
       "id": "1",
       "title": "Senior React Developer",
       "type": "Full-Time",
-      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "location": "Tidel Park, Chennai",
-      "salary": "₹70K - ₹80K",
-      "company": {
-        "name": "NewTek Solutions",
-        "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
-        "contactEmail": "contact@teksolutions.com",
-        "contactPhone": "+91 98765 43210"
-      },
-      "date": "20 Apr, 2024",
+      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "tags": [
         "Full time",
         "React",
@@ -21,7 +13,14 @@
         "Senior level",
         "Flexible Schedule"
       ],
-      "tag": "Developer Senior"
+      "salary": "₹70k - ₹80k",
+      "date": "07 Jul, 2024",
+      "company": {
+        "name": "NewTek Solutions",
+        "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
+        "contactEmail": "contact@teksolutions.com",
+        "contactPhone": "+91 98765 43210"
+      }
     },
     {
       "id": "8",
