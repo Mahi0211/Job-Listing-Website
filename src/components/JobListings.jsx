@@ -12,11 +12,11 @@ const JobListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
+      const apiUrl = isHome ? "/api/jobs?limit=3" : "/api/jobs";
       try {
         const res = await fetch(apiUrl);
         if (!res.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await res.json();
         setJobs(data);
@@ -50,18 +50,26 @@ const JobListings = ({ isHome = false }) => {
   return (
     <section className="px-4 py-10">
       <div className="flex flex-col gap-10 lg:flex-row">
-       {!isHome ? <FilterCard
-          activeScheduleFilters={activeScheduleFilters}
-          onScheduleFilterChange={handleScheduleFilterChange}
-          activeTypeFilters={activeTypeFilters}
-          onTypeFilterChange={handleTypeFilterChange}
-        /> : <div></div> }
+        {!isHome ? (
+          <FilterCard
+            activeScheduleFilters={activeScheduleFilters}
+            onScheduleFilterChange={handleScheduleFilterChange}
+            activeTypeFilters={activeTypeFilters}
+            onTypeFilterChange={handleTypeFilterChange}
+          />
+        ) : (
+          <div></div>
+        )}
         <div className="w-full m-auto lg:w-3/4">
-          {!isHome ? <h2 className="mb-6 text-3xl font-bold text-black lg:text-5xl font-brandonGrotesqueBold">
-            {isHome ? "Recent jobs" : "Browse jobs"}
-          </h2> : <h2 className="mb-6 text-3xl font-bold text-center text-black lg:text-5xl font-brandonGrotesqueBold">
-            {isHome ? "Recent jobs" : "Browse jobs"}
-          </h2>}
+          {!isHome ? (
+            <h2 className="mb-6 text-3xl font-bold text-black lg:text-5xl font-brandonGrotesqueBold">
+              {isHome ? "Recent jobs" : "Browse jobs"}
+            </h2>
+          ) : (
+            <h2 className="mb-6 text-3xl font-bold text-center text-black lg:text-5xl font-brandonGrotesqueBold">
+              {isHome ? "Recent jobs" : "Browse jobs"}
+            </h2>
+          )}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
             {loading ? (
               <Loading loading={loading} />

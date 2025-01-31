@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { BookmarkIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import jobs from "../jobs.json";
+import jobs from "../../data/jobs.json";
 import { Link } from "react-router-dom";
 
 const tagColorsMap = {

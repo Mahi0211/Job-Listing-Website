@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const navigation = [
   { name: "Find job", href: "/jobs" },
   { name: "Add job", href: "/add-job" },
-  { name: "Projects", href: "#" },
+  { name: "Saved Jobs", href: "#" },
   { name: "Calendar", href: "#" },
 ];
 const menuItem = [

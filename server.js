@@ -1,46 +1,32 @@
-// server.js
-
 import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
+// import { fileURLToPath } from "url";
+// import path from "path";
+import jobs from "./routes/jobs.js";
+import logger from "./middleware/logger.js";
+import notFound from "./middleware/notFound.js";
+import errorHandler from "./middleware/error.js";
+
+const PORT = process.env.PORT || 5000;
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 8000;
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
+// Body parser missleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-// Sample data (replace this with your actual data)
-const jobs = [
-  {
-    id: 1,
-    title: "Software Engineer",
-    description: "Develop software solutions.",
-  },
-  {
-    id: 2,
-    title: "Data Analyst",
-    description: "Analyze data to provide insights.",
-  },
-];
+// middleware
+app.use(logger);
 
 // Routes
-app.get("/api/jobs", (req, res) => {
-  res.json(jobs);
-});
+app.use("/api/jobs", jobs);
 
-app.get("/api/jobs/:id", (req, res) => {
-  const jobId = parseInt(req.params.id, 10);
-  const job = jobs.find((job) => job.id === jobId);
-  if (job) {
-    res.json(job);
-  } else {
-    res.status(404).json({ message: "Job not found" });
-  }
-});
+// error handler middleware
+app.use(notFound);
+app.use(errorHandler);
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
 });

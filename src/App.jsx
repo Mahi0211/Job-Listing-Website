@@ -36,7 +36,6 @@ const App = () => {
   };
 
   // delete-job
-
   const deleteJob = async (id) => {
     // eslint-disable-next-line no-unused-vars
     const res = await fetch(`/api/jobs/${id}`, {
@@ -46,7 +45,6 @@ const App = () => {
   };
 
   // update-job
-
   const updateJob = async (job) => {
     // eslint-disable-next-line no-unused-vars
     const res = await fetch(`/api/jobs/${job.id}`, {
