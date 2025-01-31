@@ -92,7 +92,7 @@ const JobListingCard = ({ job, index }) => {
             </div>
           </div>
           <Link
-            to={`/jobs/${job.id}`}
+            to={`https://job-listing-website-production.up.railway.app/api/jobs/${job.id}`}
             className="bg-[#0B1623] text-white py-1 px-3 rounded-2xl font-brandonGrotesqueBold"
           >
             Details
