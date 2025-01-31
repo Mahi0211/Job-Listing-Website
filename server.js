@@ -5,6 +5,7 @@ import jobs from "./routes/jobs.js";
 import logger from "./middleware/logger.js";
 import notFound from "./middleware/notFound.js";
 import errorHandler from "./middleware/error.js";
+import cors from "cors";
 
 const PORT = process.env.PORT || 5000;
 
@@ -12,6 +13,8 @@ const PORT = process.env.PORT || 5000;
 // const __dirname = path.dirname(__filename);
 
 const app = express();
+
+app.use(cors());
 
 // Body parser missleware
 app.use(express.json());
