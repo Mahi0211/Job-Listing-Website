@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 import { useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 // import Loading from "../components/Loading";
 
 // eslint-disable-next-line react/prop-types, react-refresh/only-export-components
@@ -16,9 +16,9 @@ const JobPage = ({ deleteJob }) => {
     if (!confirm) return;
     deleteJob(jobId);
 
-    toast.success("Job Deleted Successfully")
+    toast.success("Job Deleted Successfully");
 
-    navigate("/jobs")
+    navigate("/jobs");
   };
 
   return (
@@ -141,7 +141,9 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const jobLoader = async ({ params }) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
+  const res = await fetch(
+    `https://job-listing-website-production.up.railway.app/api/jobs/${params.id}`
+  );
   const data = await res.json();
   return data;
 };
