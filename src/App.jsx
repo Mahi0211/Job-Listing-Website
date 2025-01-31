@@ -16,7 +16,7 @@ const App = () => {
   // add-job
   const addJob = async (newJob) => {
     try {
-      const res = await fetch("/api/jobs", {
+      const res = await fetch("https://job-listing-website-production.up.railway.app/api/jobs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const App = () => {
   // delete-job
   const deleteJob = async (id) => {
     // eslint-disable-next-line no-unused-vars
-    const res = await fetch(`/api/jobs/${id}`, {
+    const res = await fetch(`https://job-listing-website-production.up.railway.app/api/jobs/${id}`, {
       method: "DELETE",
     });
     return;
@@ -47,7 +47,7 @@ const App = () => {
   // update-job
   const updateJob = async (job) => {
     // eslint-disable-next-line no-unused-vars
-    const res = await fetch(`/api/jobs/${job.id}`, {
+    const res = await fetch(`https://job-listing-website-production.up.railway.app/api/jobs/${job.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
