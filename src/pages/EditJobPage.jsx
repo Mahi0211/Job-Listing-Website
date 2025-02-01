@@ -82,12 +82,14 @@ const EditJobPage = ({ updateJobSubmit }) => {
   };
 
   useEffect(() => {
-    const formattedSalary = `₹${customMinSalary || minSalary}k - ₹${
-      customMaxSalary || maxSalary
-    }k`;
-    setSalary(formattedSalary);
-
+    // Only format the salary if at least one of the fields is filled
     if (minSalary || maxSalary || customMinSalary || customMaxSalary) {
+      const formattedSalary = `₹${customMinSalary || minSalary}k - ₹${
+        customMaxSalary || maxSalary
+      }k`;
+      setSalary(formattedSalary);
+
+      // Validate salary range
       if (
         parseFloat(minSalary || customMinSalary) >=
         parseFloat(maxSalary || customMaxSalary)
@@ -97,6 +99,9 @@ const EditJobPage = ({ updateJobSubmit }) => {
       } else {
         setError("");
       }
+    } else {
+      // If all fields are empty, keep the current salary
+      setSalary(job.salary);
     }
   }, [minSalary, maxSalary, customMinSalary, customMaxSalary, job.salary]);
 
