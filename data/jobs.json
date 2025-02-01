@@ -275,26 +275,5 @@
       "contactEmail": "dream11@gmail.com",
       "contactPhone": "9856237410"
     }
-  },
-  {
-    "id": "_eSNfc7mf",
-    "title": "Java developer",
-    "type": "Full-Time",
-    "etype": "Full-Day",
-    "location": "Guindy, Chennai",
-    "description": "We want experienced freshers to work with our team's developers.",
-    "tags": [
-      "java",
-      "node",
-      "ruby"
-    ],
-    "salary": "₹undefinedk - ₹undefinedk",
-    "date": "31 Jan, 2025",
-    "company": {
-      "description": "We want experienced freshers to work with our team's developers.",
-      "name": "Mariyamman Technologies",
-      "contactEmail": "mariyamman@gmail.com",
-      "contactPhone": "09887766540"
-    }
   }
 ]
