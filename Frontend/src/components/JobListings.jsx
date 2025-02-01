@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import FilterCard from "./FilterCard";
 import JobListingCard from "./JobListingCard";
-import Loading from "../components/Loading";
+import Loading from "./Loading";
 
 // eslint-disable-next-line react/prop-types
 const JobListings = ({ isHome = false }) => {
