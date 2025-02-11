@@ -40,7 +40,6 @@ const AddJobPage = ({ addJobSubmit }) => {
   const submitForm = (e) => {
     e.preventDefault();
     const currentDate = new Date();
-    // setDate(currentDate);
 
     const day = currentDate.getDate().toString().padStart(2, "0");
     const month = currentDate.toLocaleString("default", { month: "short" });
@@ -48,8 +47,6 @@ const AddJobPage = ({ addJobSubmit }) => {
     const formattedDate = `${day} ${month}, ${year}`;
 
     setDate(formattedDate);
-
-    // console.log(formattedDate);
 
     const newJob = {
       title,
@@ -67,7 +64,6 @@ const AddJobPage = ({ addJobSubmit }) => {
         contactPhone,
       },
     };
-    // console.log(newJob);
     console.log(date);
     addJobSubmit(newJob);
 

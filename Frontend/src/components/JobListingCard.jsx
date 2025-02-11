@@ -13,9 +13,6 @@ const tagColorsMap = {
 const JobListingCard = ({ job, index }) => {
   const colorClass =
     job.tag && tagColorsMap[job.tag] ? tagColorsMap[job.tag] : "bg-slate-200";
-  // console.log("job.tag:", job.tag);
-  // console.log("color:", colorClass);
-  // Initialize bookmark states for each job listing
   const [bookmarkStatus, setBookmarkStatus] = useState(() =>
     Array(jobs.length).fill(false)
   );
@@ -34,12 +31,6 @@ const JobListingCard = ({ job, index }) => {
         <div
           className={`${colorClass} h-72 rounded-lg flex flex-col justify-between p-4`}
         >
-          {/* {console.log(
-            "Class name:",
-            `${
-              colorClass ? `bg-[${colorClass}]` : "bg-slate-400"
-            } h-72 rounded-lg flex flex-col justify-between p-4`
-          )} */}
           <div className="flex justify-between">
             <div className="inline-block p-2 text-sm bg-white rounded-full shadow font-brandonGrotesqueBold">
               {job.date}
