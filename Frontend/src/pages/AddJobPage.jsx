@@ -176,7 +176,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                 id="title"
                 name="title"
                 className="w-full px-3 py-2 mb-2 text-lg max-sm:text-base border rounded font-brandonGrotesqueMedium"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="eg. Front-end developer"
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
