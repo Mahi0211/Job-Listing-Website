@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { BookmarkIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import jobs from "../../../Backend/data/jobs.json";
+// import jobs from "../../../Backend/data/jobs.json";
 import { Link } from "react-router-dom";
 
 const tagColorsMap = {
@@ -14,7 +14,7 @@ const JobListingCard = ({ job, index }) => {
   const colorClass =
     job.tag && tagColorsMap[job.tag] ? tagColorsMap[job.tag] : "bg-slate-200";
   const [bookmarkStatus, setBookmarkStatus] = useState(() =>
-    Array(jobs.length).fill(false)
+    Array(job.length).fill(false)
   );
 
   const handleBookmarkClick = (index) => {
