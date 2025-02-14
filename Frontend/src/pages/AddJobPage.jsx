@@ -56,7 +56,7 @@ const AddJobPage = ({ addJobSubmit }) => {
       description,
       tags,
       salary,
-      date: formattedDate,
+      date: date,
       company: {
         name: companyName,
         description: companyDescription,
@@ -64,7 +64,6 @@ const AddJobPage = ({ addJobSubmit }) => {
         contactPhone,
       },
     };
-    console.log(date);
     addJobSubmit(newJob);
 
     toast.success("Job Added Successfully");
