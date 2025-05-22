@@ -13,8 +13,8 @@ const JobListings = ({ isHome = false }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       const apiUrl = isHome
-        ? "https://job-listing-website-production.up.railway.app/api/jobs?limit=3"
-        : "https://job-listing-website-production.up.railway.app/api/jobs";
+        ? "https://job-listing-website-vteo.onrender.com/api/jobs?limit=3"
+        : "https://job-listing-website-vteo.onrender.com/api/jobs";
       try {
         const res = await fetch(apiUrl);
         if (!res.ok) {
